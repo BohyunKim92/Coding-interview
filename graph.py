@@ -1,22 +1,35 @@
-print('Depth First Search')
-def explore(g: dict[str, list[str]], visited: set, path: list[str], v: str) -> list[str]:
-    visited.add(v)
-    path.append(v)
-    for n in g[v]:
-        if n not in visited:
-            explore(g,visited,path,n)
+"""This is a docstring for depth first search. """
+
+def explore_graphs(graph: dict[str, list[str]], visited: set,
+                    path: list[str], vertex: str) -> list[str]:
+    """
+    Explore graph based on graph, visited node, path and v. 
+    """
+    visited.add(vertex)
+    path.append(vertex)
+    for neighbor in graph[vertex]:
+        if neighbor not in visited:
+            explore_graphs(graph, visited, path, neighbor)
     return path
 
-def dfs(g: dict[str,list[str]], s: str)-> list[str]:
+def depth_first_search(graph: dict[str,list[str]], source: str)-> list[str]:
+    """
+    given a graph and source node, return
+    """
     visited = set()
     path = []
-    return explore(g,visited,path,s)
+    return explore_graphs(graph,visited,path,source)
 
-g1 = {
-    'A': ['B'],
-    'B': ['A'],
-    'C': ['D'],
-    'D': ['C'],
-    'E': []
-}
-print(dfs(g1,'A'))
+def main():
+    """Execute graph_example_1"""
+    print('Depth First Search')
+    graph_example_1 = {
+        'A': ['B'], 'B': ['A'],
+        'C': ['D'], 'D': ['C'],
+        'E': []
+        }
+    
+    print(depth_first_search(graph_example_1,'A'))
+
+if __name__ == '__main__':
+    main()
