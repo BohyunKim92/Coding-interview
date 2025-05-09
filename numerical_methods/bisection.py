@@ -19,7 +19,6 @@ def bisection_minus_plus(f: Callable[[float],float], left: float, right: float) 
     zero_tolerance = 1e-15
     if right-left < zero_tolerance:
         return left
-    
     mid = (right+left)/2
     print(f"mid = {mid}")
 
@@ -57,7 +56,6 @@ def bisection(f: Callable[[float],float], left: float, right: float) -> float:
 
     if f(left) < 0 and f(right) > 0:
         return bisection_minus_plus(f, left, right)
-    
     if f(left) > 0 and f(right) < 0:
         return bisection_plus_minus(f, left, right)
 
@@ -72,4 +70,3 @@ def main():
 
 if __name__ == '__main__':
     main()
-

@@ -23,12 +23,14 @@ def depth_first_search(graph: dict[str,list[str]], source: str)-> list[str]:
 def main():
     """Execute graph_example_1"""
     print('Depth First Search')
-    graph_example_1 = {
-        'A': ['B'], 'B': ['A'],
-        'C': ['D'], 'D': ['C'],
-        'E': []
+    graph_example_1 =  {
+        "a" : ["b","c"],
+        "b" : ["a", "d"],
+        "c" : ["a", "d"],
+        "d" : ["e"],
+        "e" : ["d"]
         }
-    print(depth_first_search(graph_example_1,'A'))
+    print(depth_first_search(graph_example_1,"a"))
 
 
 if __name__ == '__main__':
