@@ -1,3 +1,4 @@
+from typing import List
 class Solution:
     def canFinish(self, numCourses: int, prerequisites: List[List[int]]) -> bool:
         if numCourses == 1 or not prerequisites:
