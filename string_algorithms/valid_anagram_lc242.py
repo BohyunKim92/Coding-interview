@@ -1,7 +1,9 @@
 class Solution:
     def isAnagram(self, s: str, t: str) -> bool:
         """ 
-        Anagram is word or phrase that can be rearranged to different form
+        Problem description: Given two strings s and t, return true if t is an anagram of s, and false otherwise
+
+        Note: Anagram is word or phrase that can be rearranged to different form
         Space and dash doesn't count. 
         
         Edge case questions: length of string s and t, containing other than english letter. uppercase lower case distinction. e.g. unicode? what to do for empty string? 
